@@ -1,0 +1,113 @@
+{
+ "grid": 4,
+ "brows": {
+  "neutral": 0,
+  "raised": 1,
+  "angry": 2,
+  "sad": 3,
+  "confused": 4,
+  "smug": 5,
+  "determined": 6,
+  "flat": 7
+ },
+ "eyes": {
+  "open": 0,
+  "happy": 1,
+  "wide": 2,
+  "scared": 3,
+  "half": 4,
+  "squint": 5,
+  "crying": 6,
+  "closed": 7,
+  "look_left": 8,
+  "look_right": 9,
+  "laugh": 10,
+  "confused": 11
+ },
+ "mouths": {
+  "smile": 0,
+  "grin": 1,
+  "laugh": 2,
+  "o": 3,
+  "small_o": 4,
+  "gritted": 5,
+  "frown": 6,
+  "wail": 7,
+  "smirk": 8,
+  "squiggle": 9,
+  "flat": 10,
+  "talk_closed": 11,
+  "talk_half": 12,
+  "talk_wide": 13,
+  "talk_o": 14
+ },
+ "expressions": {
+  "calm": [
+   "neutral",
+   "open",
+   "smile"
+  ],
+  "happy": [
+   "neutral",
+   "happy",
+   "grin"
+  ],
+  "laughing": [
+   "raised",
+   "laugh",
+   "laugh"
+  ],
+  "shocked": [
+   "raised",
+   "wide",
+   "o"
+  ],
+  "scared": [
+   "sad",
+   "scared",
+   "small_o"
+  ],
+  "angry": [
+   "angry",
+   "squint",
+   "gritted"
+  ],
+  "sad": [
+   "sad",
+   "open",
+   "frown"
+  ],
+  "crying": [
+   "sad",
+   "crying",
+   "wail"
+  ],
+  "smug": [
+   "smug",
+   "half",
+   "smirk"
+  ],
+  "confused": [
+   "confused",
+   "confused",
+   "squiggle"
+  ],
+  "sleepy": [
+   "flat",
+   "half",
+   "flat"
+  ],
+  "determined": [
+   "determined",
+   "squint",
+   "flat"
+  ]
+ },
+ "talk": [
+  "talk_closed",
+  "talk_half",
+  "talk_wide",
+  "talk_o"
+ ],
+ "blink": "closed"
+}

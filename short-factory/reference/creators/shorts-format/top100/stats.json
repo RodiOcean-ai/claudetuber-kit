@@ -1,0 +1,1568 @@
+{
+ "n": 100,
+ "dur": {
+  "min": 21.0,
+  "median": 29.1,
+  "max": 107.1,
+  "mean": 31.58
+ },
+ "words": {
+  "min": 63,
+  "median": 81.0,
+  "max": 274,
+  "mean": 87.73
+ },
+ "wps": {
+  "min": 2.25,
+  "median": 2.785,
+  "max": 3.6,
+  "mean": 2.79
+ },
+ "nsent": {
+  "min": 2,
+  "median": 5.0,
+  "max": 26,
+  "mean": 5.64
+ },
+ "start": {
+  "min": 0.0,
+  "median": 0.0,
+  "max": 0.0,
+  "mean": 0.0
+ },
+ "pauses05": {
+  "min": 0,
+  "median": 0.0,
+  "max": 10,
+  "mean": 0.26
+ },
+ "sentence_len": {
+  "median": 15.0,
+  "mean": 15.6,
+  "p10": 8,
+  "p90": 24,
+  "share_under6": 0.025,
+  "share_over20": 0.181
+ },
+ "sent_open1": [
+  [
+   "and",
+   69
+  ],
+  [
+   "but",
+   62
+  ],
+  [
+   "if",
+   44
+  ],
+  [
+   "this",
+   36
+  ],
+  [
+   "the",
+   35
+  ],
+  [
+   "he",
+   30
+  ],
+  [
+   "when",
+   23
+  ],
+  [
+   "now",
+   23
+  ],
+  [
+   "you",
+   22
+  ],
+  [
+   "then",
+   16
+  ],
+  [
+   "well",
+   14
+  ],
+  [
+   "it",
+   13
+  ],
+  [
+   "so",
+   11
+  ],
+  [
+   "once",
+   11
+  ],
+  [
+   "as",
+   9
+  ],
+  [
+   "they",
+   7
+  ],
+  [
+   "instead",
+   6
+  ],
+  [
+   "in",
+   6
+  ],
+  [
+   "have",
+   5
+  ],
+  [
+   "it's",
+   5
+  ],
+  [
+   "to",
+   5
+  ],
+  [
+   "inside",
+   5
+  ],
+  [
+   "a",
+   4
+  ],
+  [
+   "finally",
+   4
+  ],
+  [
+   "your",
+   4
+  ],
+  [
+   "his",
+   4
+  ],
+  [
+   "there",
+   4
+  ],
+  [
+   "next",
+   4
+  ],
+  [
+   "she",
+   4
+  ],
+  [
+   "at",
+   3
+  ],
+  [
+   "do",
+   2
+  ],
+  [
+   "after",
+   2
+  ],
+  [
+   "imagine",
+   2
+  ],
+  [
+   "why",
+   2
+  ],
+  [
+   "for",
+   2
+  ],
+  [
+   "eventually",
+   2
+  ],
+  [
+   "one",
+   2
+  ],
+  [
+   "you're",
+   2
+  ],
+  [
+   "what",
+   2
+  ],
+  [
+   "these",
+   2
+  ]
+ ],
+ "sent_open2": [
+  [
+   "if you",
+   32
+  ],
+  [
+   "you see",
+   18
+  ],
+  [
+   "and if",
+   11
+  ],
+  [
+   "when you",
+   9
+  ],
+  [
+   "but the",
+   9
+  ],
+  [
+   "and this",
+   8
+  ],
+  [
+   "when a",
+   6
+  ],
+  [
+   "but if",
+   6
+  ],
+  [
+   "have you",
+   5
+  ],
+  [
+   "once the",
+   5
+  ],
+  [
+   "now this",
+   5
+  ],
+  [
+   "and when",
+   5
+  ],
+  [
+   "now if",
+   5
+  ],
+  [
+   "and over",
+   4
+  ],
+  [
+   "but this",
+   4
+  ],
+  [
+   "then he",
+   4
+  ],
+  [
+   "he was",
+   4
+  ],
+  [
+   "but sometimes",
+   3
+  ],
+  [
+   "it would",
+   3
+  ],
+  [
+   "then a",
+   3
+  ],
+  [
+   "and because",
+   3
+  ],
+  [
+   "if you're",
+   3
+  ],
+  [
+   "this is",
+   3
+  ],
+  [
+   "but as",
+   3
+  ],
+  [
+   "so what",
+   3
+  ],
+  [
+   "and that's",
+   3
+  ],
+  [
+   "and while",
+   3
+  ],
+  [
+   "but when",
+   3
+  ],
+  [
+   "as the",
+   2
+  ],
+  [
+   "so instead",
+   2
+  ],
+  [
+   "do you",
+   2
+  ],
+  [
+   "well this",
+   2
+  ],
+  [
+   "but what",
+   2
+  ],
+  [
+   "now the",
+   2
+  ],
+  [
+   "but in",
+   2
+  ],
+  [
+   "this makes",
+   2
+  ],
+  [
+   "as it",
+   2
+  ],
+  [
+   "well the",
+   2
+  ],
+  [
+   "it was",
+   2
+  ],
+  [
+   "inside a",
+   2
+  ],
+  [
+   "now these",
+   2
+  ],
+  [
+   "and as",
+   2
+  ],
+  [
+   "once it",
+   2
+  ],
+  [
+   "this will",
+   2
+  ],
+  [
+   "and the",
+   2
+  ],
+  [
+   "the king",
+   2
+  ],
+  [
+   "what do",
+   2
+  ],
+  [
+   "but it's",
+   2
+  ],
+  [
+   "and these",
+   2
+  ],
+  [
+   "now when",
+   2
+  ]
+ ],
+ "sent_open3": [
+  [
+   "have you ever",
+   5
+  ],
+  [
+   "and if you",
+   5
+  ],
+  [
+   "but if you",
+   4
+  ],
+  [
+   "you see the",
+   4
+  ],
+  [
+   "if you get",
+   3
+  ],
+  [
+   "you see some",
+   3
+  ],
+  [
+   "and this is",
+   3
+  ],
+  [
+   "do you notice",
+   2
+  ],
+  [
+   "if you lose",
+   2
+  ],
+  [
+   "you see when",
+   2
+  ],
+  [
+   "but what if",
+   2
+  ],
+  [
+   "if you can't",
+   2
+  ],
+  [
+   "and when the",
+   2
+  ],
+  [
+   "and if the",
+   2
+  ],
+  [
+   "and as you",
+   2
+  ],
+  [
+   "once it is",
+   2
+  ],
+  [
+   "what do you",
+   2
+  ],
+  [
+   "and over time",
+   2
+  ],
+  [
+   "if you find",
+   2
+  ],
+  [
+   "if you shoot",
+   2
+  ],
+  [
+   "so what would",
+   2
+  ],
+  [
+   "the bullet was",
+   2
+  ],
+  [
+   "and instead of",
+   2
+  ],
+  [
+   "and while the",
+   2
+  ],
+  [
+   "when you pull",
+   2
+  ],
+  [
+   "now if you",
+   2
+  ],
+  [
+   "when you get",
+   1
+  ],
+  [
+   "as the stitches",
+   1
+  ],
+  [
+   "afterwards connective tissues",
+   1
+  ],
+  [
+   "then blood vessels",
+   1
+  ],
+  [
+   "and over a",
+   1
+  ],
+  [
+   "but sometimes they",
+   1
+  ],
+  [
+   "if the area",
+   1
+  ],
+  [
+   "this creates pressure",
+   1
+  ],
+  [
+   "and if you're",
+   1
+  ],
+  [
+   "well some people",
+   1
+  ],
+  [
+   "the true reason",
+   1
+  ],
+  [
+   "you see mcdonald's",
+   1
+  ],
+  [
+   "so instead they",
+   1
+  ],
+  [
+   "if you somehow",
+   1
+  ]
+ ],
+ "script_open2": [
+  [
+   "if you",
+   28
+  ],
+  [
+   "when you",
+   7
+  ],
+  [
+   "when a",
+   6
+  ],
+  [
+   "have you",
+   5
+  ],
+  [
+   "if you're",
+   3
+  ],
+  [
+   "he was",
+   2
+  ],
+  [
+   "the bullet",
+   2
+  ],
+  [
+   "if your",
+   2
+  ],
+  [
+   "if everyone",
+   1
+  ],
+  [
+   "they opened",
+   1
+  ],
+  [
+   "a red",
+   1
+  ],
+  [
+   "imagine waking",
+   1
+  ],
+  [
+   "a tiny",
+   1
+  ],
+  [
+   "the soldier's",
+   1
+  ],
+  [
+   "his teeth",
+   1
+  ],
+  [
+   "the cow",
+   1
+  ],
+  [
+   "a few",
+   1
+  ],
+  [
+   "place the",
+   1
+  ],
+  [
+   "they soak",
+   1
+  ],
+  [
+   "inserting q",
+   1
+  ],
+  [
+   "do you",
+   1
+  ],
+  [
+   "you know",
+   1
+  ],
+  [
+   "the king",
+   1
+  ],
+  [
+   "if an",
+   1
+  ],
+  [
+   "imagine you",
+   1
+  ],
+  [
+   "he slips",
+   1
+  ],
+  [
+   "you might",
+   1
+  ],
+  [
+   "the army",
+   1
+  ],
+  [
+   "when pinocchio",
+   1
+  ],
+  [
+   "he dropped",
+   1
+  ],
+  [
+   "he tried",
+   1
+  ],
+  [
+   "there is",
+   1
+  ],
+  [
+   "walt disney",
+   1
+  ],
+  [
+   "he hit",
+   1
+  ],
+  [
+   "the parasite",
+   1
+  ],
+  [
+   "in a",
+   1
+  ],
+  [
+   "most people",
+   1
+  ],
+  [
+   "they squeezed",
+   1
+  ],
+  [
+   "hold open",
+   1
+  ],
+  [
+   "he pressed",
+   1
+  ]
+ ],
+ "script_open3": [
+  [
+   "have you ever",
+   5
+  ],
+  [
+   "if you get",
+   3
+  ],
+  [
+   "if you lose",
+   2
+  ],
+  [
+   "if you shoot",
+   2
+  ],
+  [
+   "the bullet was",
+   2
+  ],
+  [
+   "when you get",
+   1
+  ],
+  [
+   "if you somehow",
+   1
+  ],
+  [
+   "if you shot",
+   1
+  ],
+  [
+   "if everyone on",
+   1
+  ],
+  [
+   "when a firing",
+   1
+  ],
+  [
+   "when a doctor",
+   1
+  ],
+  [
+   "they opened the",
+   1
+  ],
+  [
+   "if you accidentally",
+   1
+  ],
+  [
+   "when a honey",
+   1
+  ],
+  [
+   "if you stuck",
+   1
+  ],
+  [
+   "a red hot",
+   1
+  ],
+  [
+   "if you're stuck",
+   1
+  ],
+  [
+   "imagine waking up",
+   1
+  ],
+  [
+   "a tiny nail",
+   1
+  ],
+  [
+   "if you're trapped",
+   1
+  ],
+  [
+   "when you use",
+   1
+  ],
+  [
+   "the soldier's foot",
+   1
+  ],
+  [
+   "when a tiny",
+   1
+  ],
+  [
+   "his teeth were",
+   1
+  ],
+  [
+   "if you plucked",
+   1
+  ],
+  [
+   "if you cut",
+   1
+  ],
+  [
+   "if you touch",
+   1
+  ],
+  [
+   "the cow knocked",
+   1
+  ],
+  [
+   "if you chip",
+   1
+  ],
+  [
+   "a few days",
+   1
+  ],
+  [
+   "place the flies",
+   1
+  ],
+  [
+   "they soak bills",
+   1
+  ],
+  [
+   "if you stepped",
+   1
+  ],
+  [
+   "inserting q tips",
+   1
+  ],
+  [
+   "do you notice",
+   1
+  ],
+  [
+   "you know the",
+   1
+  ],
+  [
+   "the king gave",
+   1
+  ],
+  [
+   "if an octopus",
+   1
+  ],
+  [
+   "imagine you woke",
+   1
+  ],
+  [
+   "if you swallowed",
+   1
+  ]
+ ],
+ "phrases": [
+  {
+   "ph": "and",
+   "shorts": 93,
+   "total": 278,
+   "init": 69,
+   "median_pos": 0.56
+  },
+  {
+   "ph": "you",
+   "shorts": 76,
+   "total": 184,
+   "init": 22,
+   "median_pos": 0.28
+  },
+  {
+   "ph": "but",
+   "shorts": 64,
+   "total": 95,
+   "init": 62,
+   "median_pos": 0.4
+  },
+  {
+   "ph": "this",
+   "shorts": 60,
+   "total": 103,
+   "init": 36,
+   "median_pos": 0.47
+  },
+  {
+   "ph": "that",
+   "shorts": 50,
+   "total": 70,
+   "init": 0,
+   "median_pos": 0.5
+  },
+  {
+   "ph": "if",
+   "shorts": 49,
+   "total": 78,
+   "init": 44,
+   "median_pos": 0.22
+  },
+  {
+   "ph": "as",
+   "shorts": 43,
+   "total": 59,
+   "init": 9,
+   "median_pos": 0.52
+  },
+  {
+   "ph": "your",
+   "shorts": 42,
+   "total": 97,
+   "init": 4,
+   "median_pos": 0.38
+  },
+  {
+   "ph": "when",
+   "shorts": 36,
+   "total": 44,
+   "init": 23,
+   "median_pos": 0.28
+  },
+  {
+   "ph": "so",
+   "shorts": 31,
+   "total": 35,
+   "init": 11,
+   "median_pos": 0.48
+  },
+  {
+   "ph": "actually",
+   "shorts": 29,
+   "total": 37,
+   "init": 0,
+   "median_pos": 0.33
+  },
+  {
+   "ph": "then",
+   "shorts": 28,
+   "total": 32,
+   "init": 16,
+   "median_pos": 0.42
+  },
+  {
+   "ph": "which",
+   "shorts": 25,
+   "total": 28,
+   "init": 0,
+   "median_pos": 0.62
+  },
+  {
+   "ph": "now",
+   "shorts": 22,
+   "total": 50,
+   "init": 46,
+   "median_pos": 0.51
+  },
+  {
+   "ph": "just",
+   "shorts": 21,
+   "total": 31,
+   "init": 0,
+   "median_pos": 0.47
+  },
+  {
+   "ph": "you see",
+   "shorts": 17,
+   "total": 18,
+   "init": 18,
+   "median_pos": 0.3
+  },
+  {
+   "ph": "even",
+   "shorts": 17,
+   "total": 21,
+   "init": 1,
+   "median_pos": 0.56
+  },
+  {
+   "ph": "instead",
+   "shorts": 16,
+   "total": 17,
+   "init": 6,
+   "median_pos": 0.51
+  },
+  {
+   "ph": "once",
+   "shorts": 16,
+   "total": 18,
+   "init": 11,
+   "median_pos": 0.45
+  },
+  {
+   "ph": "because",
+   "shorts": 16,
+   "total": 20,
+   "init": 1,
+   "median_pos": 0.57
+  },
+  {
+   "ph": "after",
+   "shorts": 13,
+   "total": 13,
+   "init": 2,
+   "median_pos": 0.73
+  },
+  {
+   "ph": "right",
+   "shorts": 13,
+   "total": 14,
+   "init": 0,
+   "median_pos": 0.35
+  },
+  {
+   "ph": "while",
+   "shorts": 13,
+   "total": 14,
+   "init": 0,
+   "median_pos": 0.36
+  },
+  {
+   "ph": "this is",
+   "shorts": 12,
+   "total": 12,
+   "init": 3,
+   "median_pos": 0.26
+  },
+  {
+   "ph": "only",
+   "shorts": 11,
+   "total": 11,
+   "init": 0,
+   "median_pos": 0.55
+  },
+  {
+   "ph": "before",
+   "shorts": 11,
+   "total": 11,
+   "init": 0,
+   "median_pos": 0.62
+  },
+  {
+   "ph": "people think",
+   "shorts": 10,
+   "total": 10,
+   "init": 0,
+   "median_pos": 0.15
+  },
+  {
+   "ph": "still",
+   "shorts": 10,
+   "total": 11,
+   "init": 0,
+   "median_pos": 0.44
+  },
+  {
+   "ph": "most people",
+   "shorts": 9,
+   "total": 9,
+   "init": 1,
+   "median_pos": 0.13
+  },
+  {
+   "ph": "until",
+   "shorts": 9,
+   "total": 9,
+   "init": 0,
+   "median_pos": 0.41
+  },
+  {
+   "ph": "every",
+   "shorts": 7,
+   "total": 10,
+   "init": 0,
+   "median_pos": 0.54
+  },
+  {
+   "ph": "eventually",
+   "shorts": 7,
+   "total": 8,
+   "init": 2,
+   "median_pos": 0.69
+  },
+  {
+   "ph": "finally",
+   "shorts": 7,
+   "total": 7,
+   "init": 4,
+   "median_pos": 0.77
+  },
+  {
+   "ph": "some people",
+   "shorts": 6,
+   "total": 6,
+   "init": 1,
+   "median_pos": 0.12
+  },
+  {
+   "ph": "also",
+   "shorts": 6,
+   "total": 6,
+   "init": 0,
+   "median_pos": 0.93
+  },
+  {
+   "ph": "like a",
+   "shorts": 6,
+   "total": 6,
+   "init": 0,
+   "median_pos": 0.52
+  },
+  {
+   "ph": "you might think",
+   "shorts": 6,
+   "total": 6,
+   "init": 1,
+   "median_pos": 0.21
+  },
+  {
+   "ph": "to make",
+   "shorts": 6,
+   "total": 6,
+   "init": 0,
+   "median_pos": 0.7
+  },
+  {
+   "ph": "called",
+   "shorts": 6,
+   "total": 6,
+   "init": 0,
+   "median_pos": 0.54
+  },
+  {
+   "ph": "causing",
+   "shorts": 6,
+   "total": 6,
+   "init": 0,
+   "median_pos": 0.41
+  },
+  {
+   "ph": "meaning",
+   "shorts": 6,
+   "total": 6,
+   "init": 1,
+   "median_pos": 0.6
+  },
+  {
+   "ph": "have you ever",
+   "shorts": 5,
+   "total": 5,
+   "init": 5,
+   "median_pos": 0.0
+  },
+  {
+   "ph": "times",
+   "shorts": 5,
+   "total": 5,
+   "init": 0,
+   "median_pos": 0.94
+  },
+  {
+   "ph": "known as",
+   "shorts": 5,
+   "total": 5,
+   "init": 0,
+   "median_pos": 0.43
+  },
+  {
+   "ph": "the way",
+   "shorts": 4,
+   "total": 6,
+   "init": 0,
+   "median_pos": 0.75
+  },
+  {
+   "ph": "this is because",
+   "shorts": 4,
+   "total": 4,
+   "init": 0,
+   "median_pos": 0.29
+  },
+  {
+   "ph": "ever wondered",
+   "shorts": 4,
+   "total": 4,
+   "init": 0,
+   "median_pos": 0.02
+  },
+  {
+   "ph": "which means",
+   "shorts": 4,
+   "total": 4,
+   "init": 0,
+   "median_pos": 0.57
+  },
+  {
+   "ph": "even though",
+   "shorts": 4,
+   "total": 4,
+   "init": 1,
+   "median_pos": 0.45
+  },
+  {
+   "ph": "though",
+   "shorts": 4,
+   "total": 4,
+   "init": 0,
+   "median_pos": 0.46
+  },
+  {
+   "ph": "which is",
+   "shorts": 4,
+   "total": 4,
+   "init": 0,
+   "median_pos": 0.89
+  },
+  {
+   "ph": "soon",
+   "shorts": 4,
+   "total": 4,
+   "init": 0,
+   "median_pos": 0.59
+  },
+  {
+   "ph": "never",
+   "shorts": 4,
+   "total": 5,
+   "init": 0,
+   "median_pos": 0.37
+  },
+  {
+   "ph": "the next",
+   "shorts": 3,
+   "total": 3,
+   "init": 0,
+   "median_pos": 0.71
+  },
+  {
+   "ph": "always",
+   "shorts": 3,
+   "total": 3,
+   "init": 0,
+   "median_pos": 0.73
+  },
+  {
+   "ph": "allowing",
+   "shorts": 3,
+   "total": 3,
+   "init": 0,
+   "median_pos": 0.7
+  },
+  {
+   "ph": "over time",
+   "shorts": 3,
+   "total": 3,
+   "init": 1,
+   "median_pos": 0.8
+  },
+  {
+   "ph": "today",
+   "shorts": 2,
+   "total": 2,
+   "init": 0,
+   "median_pos": 0.58
+  },
+  {
+   "ph": "imagine",
+   "shorts": 2,
+   "total": 2,
+   "init": 2,
+   "median_pos": 0.0
+  },
+  {
+   "ph": "making it",
+   "shorts": 2,
+   "total": 3,
+   "init": 0,
+   "median_pos": 0.7
+  },
+  {
+   "ph": "the answer",
+   "shorts": 2,
+   "total": 2,
+   "init": 1,
+   "median_pos": 0.65
+  },
+  {
+   "ph": "which is why",
+   "shorts": 2,
+   "total": 2,
+   "init": 0,
+   "median_pos": 0.89
+  },
+  {
+   "ph": "afterwards",
+   "shorts": 1,
+   "total": 1,
+   "init": 1,
+   "median_pos": 0.51
+  },
+  {
+   "ph": "this creates",
+   "shorts": 1,
+   "total": 1,
+   "init": 1,
+   "median_pos": 0.56
+  },
+  {
+   "ph": "not only",
+   "shorts": 1,
+   "total": 1,
+   "init": 0,
+   "median_pos": 0.78
+  },
+  {
+   "ph": "it turns out",
+   "shorts": 1,
+   "total": 1,
+   "init": 0,
+   "median_pos": 0.28
+  },
+  {
+   "ph": "turns out",
+   "shorts": 1,
+   "total": 1,
+   "init": 0,
+   "median_pos": 0.29
+  },
+  {
+   "ph": "only to",
+   "shorts": 1,
+   "total": 1,
+   "init": 0,
+   "median_pos": 0.06
+  },
+  {
+   "ph": "what if",
+   "shorts": 1,
+   "total": 2,
+   "init": 0,
+   "median_pos": 0.35
+  },
+  {
+   "ph": "this causes",
+   "shorts": 1,
+   "total": 1,
+   "init": 1,
+   "median_pos": 0.32
+  },
+  {
+   "ph": "you may",
+   "shorts": 1,
+   "total": 1,
+   "init": 0,
+   "median_pos": 0.87
+  },
+  {
+   "ph": "in fact",
+   "shorts": 1,
+   "total": 1,
+   "init": 1,
+   "median_pos": 0.68
+  },
+  {
+   "ph": "this means",
+   "shorts": 1,
+   "total": 1,
+   "init": 1,
+   "median_pos": 0.51
+  },
+  {
+   "ph": "that's why",
+   "shorts": 1,
+   "total": 1,
+   "init": 0,
+   "median_pos": 0.85
+  },
+  {
+   "ph": "simply",
+   "shorts": 1,
+   "total": 1,
+   "init": 0,
+   "median_pos": 0.85
+  },
+  {
+   "ph": "in reality",
+   "shorts": 1,
+   "total": 1,
+   "init": 1,
+   "median_pos": 0.77
+  },
+  {
+   "ph": "at the same time",
+   "shorts": 1,
+   "total": 1,
+   "init": 1,
+   "median_pos": 0.57
+  }
+ ],
+ "total_words": 8773,
+ "first_but": {
+  "shorts_with_but": 64,
+  "median_s": 9.0,
+  "median_frac": 0.28,
+  "p25_s": 6.4,
+  "p75_s": 12.6
+ },
+ "last_open2": [
+  [
+   "and if",
+   5
+  ],
+  [
+   "and because",
+   3
+  ],
+  [
+   "and over",
+   2
+  ],
+  [
+   "once the",
+   2
+  ],
+  [
+   "now this",
+   2
+  ],
+  [
+   "what do",
+   2
+  ],
+  [
+   "and this",
+   2
+  ],
+  [
+   "and when",
+   2
+  ],
+  [
+   "and while",
+   2
+  ],
+  [
+   "and by",
+   2
+  ],
+  [
+   "so instead",
+   1
+  ],
+  [
+   "and not",
+   1
+  ],
+  [
+   "but these",
+   1
+  ],
+  [
+   "and after",
+   1
+  ],
+  [
+   "this way",
+   1
+  ],
+  [
+   "this leaked",
+   1
+  ],
+  [
+   "watch it",
+   1
+  ],
+  [
+   "and eventually",
+   1
+  ],
+  [
+   "then a",
+   1
+  ],
+  [
+   "this triggers",
+   1
+  ],
+  [
+   "this leaves",
+   1
+  ],
+  [
+   "would this",
+   1
+  ],
+  [
+   "finally it's",
+   1
+  ],
+  [
+   "the flatter",
+   1
+  ],
+  [
+   "this small",
+   1
+  ],
+  [
+   "over time",
+   1
+  ],
+  [
+   "instead if",
+   1
+  ],
+  [
+   "it was",
+   1
+  ],
+  [
+   "this caused",
+   1
+  ],
+  [
+   "it makes",
+   1
+  ]
+ ]
+}

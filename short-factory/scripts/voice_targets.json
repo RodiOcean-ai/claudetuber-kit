@@ -1,0 +1,171 @@
+{
+ "_note": "Ranges measured 29 Oct 2026 with voice_style.py. natural = the faceless-channel study's 7 videos from 2024-2026 (I01-I04, I07-I09; its 2023 videos I05/I06 were flatter). format = the shorts-format study's pace with natural-level life. format-long = the shorts-format study's long videos. Each entry: [low, high, what to do if it fails]. format-real (11 Nov 2026) = the real ranges of the format benchmark's 10 top Shorts, not the livelier 'format' set: one calm storyteller, long sentences, very few stops, even loudness.",
+ "natural": {
+  "speed_wps": [
+   3.2,
+   4.0,
+   "Too slow: tighten joins and speed up 3-6 % with pitch kept. Too fast: add || holds on key points."
+  ],
+  "phrase_speed_variation_pct": [
+   17,
+   30,
+   "Too even: comp phrases from different takes, add a slow [pause]d line before reveals and a fast aside."
+  ],
+  "tone_swing_semitones": [
+   1.4,
+   3.2,
+   "Monotone: add tone tags where the mood changes, \"!\" and \"...\", then re-comp from the liveliest takes."
+  ],
+  "stressed_words_per_min": [
+   16,
+   28,
+   "Flat stress: one CAPS word in more sentences. Too much: remove CAPS from minor words."
+  ],
+  "long_pauses_per_min": [
+   1.5,
+   3.5,
+   "Add || holds after reveals, punchlines and key points (or remove some if it drags)."
+  ],
+  "mid_pauses_per_min": [
+   0.8,
+   3.0,
+   "Use commas and \"...\" inside sentences for small breaths."
+  ],
+  "fillers_per_min": [
+   4,
+   9,
+   "Write in a few conversational words (look, I mean, okay so, wait) where a person would say them."
+  ],
+  "loudness_swing_db": [
+   5,
+   17,
+   "Too even: add a whispered or softly line and an excited line; avoid heavy compression before the check."
+  ]
+ },
+ "format": {
+  "speed_wps": [
+   2.7,
+   3.3,
+   "The format pace is about 2.8-3.0 words a second: cut words, or slow the read with [slowly] on one line."
+  ],
+  "phrase_speed_variation_pct": [
+   8,
+   25,
+   "Comp phrases from different takes for natural variation."
+  ],
+  "tone_swing_semitones": [
+   1.3,
+   3.2,
+   "Monotone: re-comp from the liveliest takes; one tone tag at the start; CAPS on the key word."
+  ],
+  "stressed_words_per_min": [
+   16,
+   32,
+   "Too few: one CAPS stress word per batch. Too many: remove CAPS and \"!\" from minor words."
+  ],
+  "long_pauses_per_min": [
+   0,
+   0.3,
+   "The format benchmark never pauses: remove || holds and \"...\"; tighten joins to 0.1 s."
+  ],
+  "mid_pauses_per_min": [
+   0,
+   1.5,
+   "Remove commas that create breaks; tighten joins."
+  ],
+  "fillers_per_min": [
+   0,
+   4,
+   "The format benchmark uses no fillers: remove them (note: common words like \"so\" and \"like\" also count here)."
+  ]
+ },
+ "format-long": {
+  "speed_wps": [
+   2.5,
+   3.2,
+   "The format benchmark's long-video pace is about 2.8 words a second."
+  ],
+  "phrase_speed_variation_pct": [
+   13,
+   37,
+   "Comp phrases from different takes; slow down before reveals."
+  ],
+  "tone_swing_semitones": [
+   1.5,
+   4.8,
+   "Monotone: re-comp from the liveliest takes; tags where the mood changes."
+  ],
+  "stressed_words_per_min": [
+   16,
+   28,
+   "Too few: one CAPS stress word in more sentences. Too many: remove CAPS from minor words."
+  ],
+  "long_pauses_per_min": [
+   0,
+   2,
+   "Holds only where the edit has a music drop or black beat."
+  ],
+  "mid_pauses_per_min": [
+   0.7,
+   3.2,
+   "Use commas and \"...\" inside sentences for small breaths."
+  ],
+  "fillers_per_min": [
+   0,
+   4,
+   "The format benchmark uses almost no fillers: remove them."
+  ],
+  "loudness_swing_db": [
+   1.5,
+   12,
+   "Add a softer line in tense moments."
+  ]
+ },
+ "format-real": {
+  "speed_wps": [
+   2.6,
+   3.4,
+   "The format benchmark speaks at about 2.7-3.0 words a second: slow the take (pitch kept) or cut words."
+  ],
+  "phrase_speed_variation_pct": [
+   0,
+   20,
+   "Too uneven: use one take per piece, do not comp phrase by phrase."
+  ],
+  "tone_swing_semitones": [
+   0,
+   2.8,
+   "Mood swings too much: one calm tag for the whole read, no mood changes between pieces."
+  ],
+  "stressed_words_per_min": [
+   14,
+   36,
+   "Too punchy: remove CAPS and \"!\"; join fragments into flowing sentences."
+  ],
+  "long_pauses_per_min": [
+   0,
+   0,
+   "The format benchmark never pauses a second: cap every gap at 0.3 s."
+  ],
+  "mid_pauses_per_min": [
+   0,
+   2.1,
+   "No half-second pauses: cap every gap at 0.3 s; remove commas that make breaks."
+  ],
+  "short_pauses_per_min": [
+   0,
+   10.5,
+   "Too many small stops: fewer full stops and commas (his sentences run 14-25 words)."
+  ],
+  "stops_per_min": [
+   0,
+   14.5,
+   "Too many stops (his Shorts: about 10 a minute): write flowing sentences, tighten the joins."
+  ],
+  "loudness_swing_db": [
+   0,
+   2.5,
+   "Loudness too uneven: compress the voice until phrases sit within about 1-2 dB."
+  ]
+ }
+}

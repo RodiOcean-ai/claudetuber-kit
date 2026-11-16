@@ -1,0 +1,66 @@
+{
+  "home": "<full path of this short-factory folder>",
+  "python": "<full path of the Python to use, e.g. <this folder>/.venv/Scripts/python.exe>",
+  "ffmpeg_dir": "<folder that holds ffmpeg.exe>",
+  "blender": "C:/Program Files/Blender Foundation/Blender 4.2/blender.exe",
+  "pylib": "",
+  "studies_root": "<your folder for channel studies>",
+  "legacy_studies": {},
+  "episodes_root": "<your folder for episodes>",
+  "edit_node_modules": "<this folder>/templates/edit/node_modules",
+  "fonts": {
+    "caption": "C:/Windows/Fonts/ariblk.ttf",
+    "bold": "C:/Windows/Fonts/arialbd.ttf",
+    "headline": "C:/Windows/Fonts/arialbd.ttf"
+  },
+  "timezone": "local clock",
+  "posting": {
+    "per_day": 1,
+    "window_start": "16:00",
+    "window_end": "22:00",
+    "platforms": [
+      "YouTube Shorts",
+      "TikTok",
+      "Instagram Reels",
+      "Facebook Reels"
+    ]
+  },
+  "sound_library": "<this folder>/assets/house_sound",
+  "music_rotation": [
+    "sprint",
+    "clocks",
+    "steps"
+  ],
+  "study": {
+    "top_shorts": 10,
+    "top_longs": 10,
+    "max_height": 720,
+    "delete_media_after": true
+  },
+  "tracker": "data/tracker.xlsx",
+  "metricool": {
+    "note": "Optional: scheduling through Metricool. Media goes in by one-time Dropbox links; you OK every post.",
+    "blog_id": "<your Metricool blog id>",
+    "brand": "<your Metricool brand name>",
+    "timezone": "<your timezone, e.g. Europe/London>",
+    "networks": [
+      "youtube",
+      "instagram",
+      "tiktok",
+      "facebook"
+    ],
+    "dropbox_folder": "<a folder inside your Dropbox, e.g. Shorts uploads>"
+  },
+  "voice_inhouse": {
+    "note": "Free local voice (scripts/voice_make.py): Chatterbox reads the script in the lively sample's voice, the read is voice-swapped to the calm sample, then ClearerVoice rebuilds the highs. Use two short recordings of a voice you have the right to use.",
+    "chatterbox_python": "<Chatterbox install>/venv/Scripts/python.exe",
+    "clearvoice_python": "<ClearerVoice install>/venv/Scripts/python.exe",
+    "clearvoice_home": "<ClearerVoice install>",
+    "gpu_turn": "",
+    "lively": "<this folder>/assets/voice/<your lively voice sample>.wav",
+    "calm": "<this folder>/assets/voice/<your calm voice sample>.wav",
+    "exaggeration": 0.75,
+    "cfg": 0.4,
+    "pause": 0.3
+  }
+}

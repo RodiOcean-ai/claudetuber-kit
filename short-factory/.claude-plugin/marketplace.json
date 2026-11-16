@@ -1,0 +1,14 @@
+{
+  "name": "rodiocean",
+  "owner": {
+    "name": "RodiOcean"
+  },
+  "plugins": [
+    {
+      "name": "short-factory",
+      "source": "./",
+      "description": "Study any YouTube channel, then make a faceless 3D Short or an explainer in 11 styles with Claude Code."
+    }
+  ],
+  "description": "Short Factory, the free video kit from the RodiOcean YouTube channel."
+}

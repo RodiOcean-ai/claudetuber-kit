@@ -1,0 +1,10 @@
+MP="py -3.13 <your-picture-maker>/make-picture.py"
+STY="Simple whiteboard marker line drawing: black marker on a pure white background, one clean uniform thick black outline weight, friendly simple doodle, very few details, no shading, no hatching, no grey, no colour fill, no text, the object centred with a wide white margin around it."
+NEG="shading, hatching, cross-hatching, grey tones, gradient, colour, colored, photo, realistic, 3d render, text, letters, words, numbers, watermark, logo, signature, blurry, low quality, sketchy messy lines, thin lines, multiple line weights, frame, border"
+O=assets_work/wb
+$MP "$STY Subject: two slices of white sandwich bread side by side, front view, each slice the classic bread-slice silhouette with a domed rounded top and squared bottom, a second crust line drawn just inside the outer edge of each slice." $O/bread --n 4 --seed 101 --negative "$NEG"
+$MP "$STY Subject: an open glass jar of peanut butter with a plain blank label band and no writing, a butter knife dipped into the jar with its handle sticking out, the round screw lid lying flat beside the jar." $O/jar --n 4 --seed 201 --negative "$NEG"
+$MP "$STY Subject: one slice of sandwich bread seen from the front, covered in a layer of peanut butter, a butter knife lying across it spreading the peanut butter, a few curved swoosh lines on the spread for texture." $O/spread --n 4 --seed 301 --negative "$NEG"
+$MP "$STY Subject: a whole sandwich made of two slices of bread stacked on top of each other, seen at a slight three-quarter angle from above so the thin filling layer shows along the edge between the two slices." $O/stack --n 4 --seed 401 --negative "$NEG"
+$MP "$STY Subject: a whole square sandwich lying on a rectangular wooden cutting board, a big kitchen knife cutting through the sandwich diagonally from one corner to the opposite corner." $O/cut --n 4 --seed 501 --negative "$NEG"
+$MP "$STY Subject: two triangle sandwich halves on a round plate, slightly apart from each other, the filling layer visible between the bread layers on the cut edge." $O/halves --n 4 --seed 601 --negative "$NEG"

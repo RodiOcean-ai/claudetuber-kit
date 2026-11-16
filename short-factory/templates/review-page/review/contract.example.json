@@ -1,0 +1,16 @@
+{
+  "_help": "Copy this file to review/contract.json and fill it in, then run: python review/make_items.py && python review/make_timeline.py. Keys that start with _ are comments. Every field is explained at the top of review/make_items.py.",
+  "title": "My video",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "_manifest": "Optional. Chapters, word times and music for the timeline (see manifest.example.json). Remove the line if there is none.",
+  "manifest": "review/manifest.json",
+  "items": [
+    { "id": "Full", "mark": "▶", "name": "The whole video", "module": "src/Video", "export": "Video", "frames": "total" },
+    { "id": "CH01", "name": "Intro", "module": "src/Chapter", "export": "Chapter", "props": { "id": "ch01" }, "chapter": "ch01" },
+    { "id": "CH02", "name": "How it works", "module": "src/Chapter", "export": "Chapter", "props": { "id": "ch02" }, "chapter": "ch02" },
+    { "id": "Short", "mark": "S", "name": "The Short (upright)", "module": "src/Short", "export": "Short", "frames": 900, "width": 1080, "height": 1920, "timeline": true, "music": false },
+    { "id": "Cover", "mark": "★", "name": "The cover", "module": "src/Cover", "export": "Cover", "frames": 1, "width": 1280, "height": 720 }
+  ]
+}

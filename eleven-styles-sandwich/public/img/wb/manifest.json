@@ -1,0 +1,151 @@
+[
+ {
+  "file": "wb_bread.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "two slices of sandwich bread side by side, front view (black marker line drawing on pure white)",
+  "notes": "paper flattened to pure white, crumb specks removed so it matches the strokes"
+ },
+ {
+  "file": "wb_bread.strokes.json",
+  "w": 1328,
+  "h": 1328,
+  "what": "ordered centre-line pen strokes for wb_bread.png",
+  "notes": "24 strokes, strokeWidth 23.8 px (median line thickness). Order: outer outline first, then long inner lines, then small details, each group chained nearest-next from top-left. Extra field 'widths' = each stroke's own measured thickness (looks closer to the original, which mixes thick outlines and thinner inner lines).",
+  "strokeWidth": 23.8,
+  "strokeCount": 24
+ },
+ {
+  "file": "wb_bread_color.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "wb_bread.png with flat soft marker colours in its closed areas, black lines on top",
+  "notes": "colours: bread #F4D79B, crust #C98B3A, peanut butter #A8642C, metal #D9DEE3, glass #DDEFF7, plate/label #FFFFFF, board #D9A86C, knife handle #B9C0C7 (darker metal, not in the brief palette)"
+ },
+ {
+  "file": "wb_jar.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "open peanut-butter jar (blank label) with a butter knife in it, lid lying beside (black marker line drawing on pure white)",
+  "notes": "paper flattened to pure white, crumb specks removed so it matches the strokes"
+ },
+ {
+  "file": "wb_jar.strokes.json",
+  "w": 1328,
+  "h": 1328,
+  "what": "ordered centre-line pen strokes for wb_jar.png",
+  "notes": "108 strokes, strokeWidth 7.0 px (median line thickness). Order: outer outline first, then long inner lines, then small details, each group chained nearest-next from top-left. Extra field 'widths' = each stroke's own measured thickness (looks closer to the original, which mixes thick outlines and thinner inner lines).",
+  "strokeWidth": 7.0,
+  "strokeCount": 108
+ },
+ {
+  "file": "wb_jar_color.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "wb_jar.png with flat soft marker colours in its closed areas, black lines on top",
+  "notes": "colours: bread #F4D79B, crust #C98B3A, peanut butter #A8642C, metal #D9DEE3, glass #DDEFF7, plate/label #FFFFFF, board #D9A86C, knife handle #B9C0C7 (darker metal, not in the brief palette)"
+ },
+ {
+  "file": "wb_spread.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "bread slice covered in peanut butter, butter knife spreading it, swoosh lines (black marker line drawing on pure white)",
+  "notes": "paper flattened to pure white, crumb specks removed so it matches the strokes"
+ },
+ {
+  "file": "wb_spread.strokes.json",
+  "w": 1328,
+  "h": 1328,
+  "what": "ordered centre-line pen strokes for wb_spread.png",
+  "notes": "57 strokes, strokeWidth 13.4 px (median line thickness). Order: outer outline first, then long inner lines, then small details, each group chained nearest-next from top-left. Extra field 'widths' = each stroke's own measured thickness (looks closer to the original, which mixes thick outlines and thinner inner lines).",
+  "strokeWidth": 13.4,
+  "strokeCount": 57
+ },
+ {
+  "file": "wb_spread_color.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "wb_spread.png with flat soft marker colours in its closed areas, black lines on top",
+  "notes": "colours: bread #F4D79B, crust #C98B3A, peanut butter #A8642C, metal #D9DEE3, glass #DDEFF7, plate/label #FFFFFF, board #D9A86C, knife handle #B9C0C7 (darker metal, not in the brief palette)"
+ },
+ {
+  "file": "wb_stack.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "whole sandwich, two slices stacked, 3/4 view, filling layer at the edge (black marker line drawing on pure white)",
+  "notes": "paper flattened to pure white, crumb specks removed so it matches the strokes"
+ },
+ {
+  "file": "wb_stack.strokes.json",
+  "w": 1328,
+  "h": 1328,
+  "what": "ordered centre-line pen strokes for wb_stack.png",
+  "notes": "16 strokes, strokeWidth 17.8 px (median line thickness). Order: outer outline first, then long inner lines, then small details, each group chained nearest-next from top-left. Extra field 'widths' = each stroke's own measured thickness (looks closer to the original, which mixes thick outlines and thinner inner lines).",
+  "strokeWidth": 17.8,
+  "strokeCount": 16
+ },
+ {
+  "file": "wb_stack_color.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "wb_stack.png with flat soft marker colours in its closed areas, black lines on top",
+  "notes": "colours: bread #F4D79B, crust #C98B3A, peanut butter #A8642C, metal #D9DEE3, glass #DDEFF7, plate/label #FFFFFF, board #D9A86C, knife handle #B9C0C7 (darker metal, not in the brief palette)"
+ },
+ {
+  "file": "wb_cut.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "top view: sandwich on a cutting board, big chef knife lying on the corner-to-corner diagonal (black marker line drawing on pure white)",
+  "notes": "paper flattened to pure white, crumb specks removed so it matches the strokes"
+ },
+ {
+  "file": "wb_cut.strokes.json",
+  "w": 1328,
+  "h": 1328,
+  "what": "ordered centre-line pen strokes for wb_cut.png",
+  "notes": "24 strokes, strokeWidth 15.0 px (median line thickness). Order: outer outline first, then long inner lines, then small details, each group chained nearest-next from top-left. Extra field 'widths' = each stroke's own measured thickness (looks closer to the original, which mixes thick outlines and thinner inner lines).",
+  "strokeWidth": 15.0,
+  "strokeCount": 24
+ },
+ {
+  "file": "wb_cut_color.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "wb_cut.png with flat soft marker colours in its closed areas, black lines on top",
+  "notes": "colours: bread #F4D79B, crust #C98B3A, peanut butter #A8642C, metal #D9DEE3, glass #DDEFF7, plate/label #FFFFFF, board #D9A86C, knife handle #B9C0C7 (darker metal, not in the brief palette)"
+ },
+ {
+  "file": "wb_halves.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "two triangle sandwich halves on a round plate, filling visible (black marker line drawing on pure white)",
+  "notes": "paper flattened to pure white, crumb specks removed so it matches the strokes"
+ },
+ {
+  "file": "wb_halves.strokes.json",
+  "w": 1328,
+  "h": 1328,
+  "what": "ordered centre-line pen strokes for wb_halves.png",
+  "notes": "45 strokes, strokeWidth 15.0 px (median line thickness). Order: outer outline first, then long inner lines, then small details, each group chained nearest-next from top-left. Extra field 'widths' = each stroke's own measured thickness (looks closer to the original, which mixes thick outlines and thinner inner lines).",
+  "strokeWidth": 15.0,
+  "strokeCount": 45
+ },
+ {
+  "file": "wb_halves_color.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "wb_halves.png with flat soft marker colours in its closed areas, black lines on top",
+  "notes": "colours: bread #F4D79B, crust #C98B3A, peanut butter #A8642C, metal #D9DEE3, glass #DDEFF7, plate/label #FFFFFF, board #D9A86C, knife handle #B9C0C7 (darker metal, not in the brief palette)"
+ },
+ {
+  "file": "hand_marker.png",
+  "w": 1085,
+  "h": 1062,
+  "what": "photo-real right hand in a writing grip holding a plain black marker, seen from above, grey sweater sleeve; RGBA cut-out",
+  "tip": [
+   13,
+   466
+  ],
+  "notes": "tip = the felt tip of the marker (left edge, about 44% down). The hand/arm runs off the bottom-right corner: the sleeve is cut flat at the right and bottom edges, so keep those edges outside the frame."
+ }
+]

@@ -1,0 +1,19 @@
+{
+  "_help": "Optional. Tells the timeline where the chapters, the spoken words and the music are. Name it in review/contract.json (\"manifest\"), then run: python review/make_timeline.py. Every field is explained at the top of review/make_timeline.py. A project that already keeps its word times in a JSON file can point at it: \"words\": \"src/data/words.json\".",
+  "fps": 30,
+  "total": 900,
+  "chapters": [
+    { "id": "ch01", "title": "Intro", "style": "Kinetic typography", "start": 0, "frames": 420,
+      "words": [ { "w": "Here's", "fs": 12, "fe": 22 }, { "w": "the", "fs": 22, "fe": 26 }, { "w": "idea.", "fs": 26, "fe": 44 } ],
+      "voice": "voice/ch01.wav", "lead": 12 },
+    { "id": "ch02", "title": "How it works", "style": "Whiteboard", "start": 420, "frames": 480,
+      "words": [ { "w": "First,", "fs": 12, "fe": 30 }, { "w": "the", "fs": 32, "fe": 36 }, { "w": "voice.", "fs": 36, "fe": 60 } ],
+      "voice": "voice/ch02.wav", "lead": 12 }
+  ],
+  "music": [
+    { "name": "Calm intro", "fs": 0, "fe": 420, "bpm": 90, "chords": "C G Am F", "inst": ["piano", "strings"] },
+    { "name": "Build-up", "fs": 420, "fe": 900, "bpm": 110, "inst": ["piano", "drums"] }
+  ],
+  "musicFiles": [ { "file": "music/bed.wav", "at": 0 } ],
+  "silent": []
+}

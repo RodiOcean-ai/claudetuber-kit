@@ -1,0 +1,24 @@
+# your own settings and data
+short-factory/config.json
+short-factory/data/*.xlsx
+claudetube/
+# installed packages and caches
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+# renders and working files
+out/
+eleven-styles-sandwich/review/review.js
+eleven-styles-sandwich/review/review.css
+eleven-styles-sandwich/review/notes.json
+eleven-styles-sandwich/review/sounds.json
+eleven-styles-sandwich/review/_bundle/
+# media you add yourself
+short-factory/assets/music/*.wav
+short-factory/assets/sfx/*.wav
+short-factory/assets/voice/*.wav
+short-factory/assets/house_sound/instruments/vsco2ce/
+short-factory/assets/house_sound/instruments/vcsl/
+eleven-styles-sandwich/public/audio/*.wav
+eleven-styles-sandwich/public/sfx/*.wav

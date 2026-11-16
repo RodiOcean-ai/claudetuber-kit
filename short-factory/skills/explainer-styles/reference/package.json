@@ -1,0 +1,45 @@
+{
+  "name": "eleven-styles-sandwich",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The same 15-second 'how to make a peanut-butter sandwich' video in 11 explainer animation styles (RodiOcean test, 14 Nov 2026)",
+  "scripts": {
+    "studio": "remotion studio",
+    "review": "py -3.13 review/serve.py 3020"
+  },
+  "dependencies": {
+    "@fontsource/abril-fatface": "*",
+    "@fontsource/anton": "*",
+    "@fontsource/bangers": "*",
+    "@fontsource/bebas-neue": "*",
+    "@fontsource/caveat": "*",
+    "@fontsource/comic-neue": "*",
+    "@fontsource/courier-prime": "*",
+    "@fontsource/fredoka": "*",
+    "@fontsource/instrument-serif": "*",
+    "@fontsource/inter": "*",
+    "@fontsource/jetbrains-mono": "*",
+    "@fontsource/patrick-hand": "*",
+    "@fontsource/permanent-marker": "*",
+    "@fontsource/rubik": "*",
+    "@fontsource/space-grotesk": "*",
+    "@react-three/fiber": "9.8.2",
+    "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "4.0.532",
+    "@remotion/noise": "4.0.532",
+    "@remotion/paths": "4.0.532",
+    "@remotion/player": "4.0.532",
+    "@remotion/shapes": "4.0.532",
+    "@remotion/three": "4.0.532",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.532",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "0.187.0",
+    "typescript": "5.9.3"
+  }
+}

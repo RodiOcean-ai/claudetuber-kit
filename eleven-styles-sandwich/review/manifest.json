@@ -1,0 +1,17 @@
+{
+  "_help": "What the review page's timeline shows. The five steps and the payoff are the same as STEPS in src/shared/timing.ts; the words are the shared beat sheet. After a change run: python review/make_timeline.py",
+  "fps": 30,
+  "total": 450,
+  "chapters": [
+    { "id": "bread", "title": "Take two slices of bread", "start": 0, "frames": 71 },
+    { "id": "knife", "title": "Dig a knife into the peanut butter", "start": 71, "frames": 63 },
+    { "id": "spread", "title": "Spread it to the edges", "start": 134, "frames": 78 },
+    { "id": "press", "title": "Press the second slice on top", "start": 212, "frames": 62 },
+    { "id": "cut", "title": "Cut it corner to corner", "start": 274, "frames": 57 },
+    { "id": "payoff", "title": "Triangles taste better", "start": 331, "frames": 119 }
+  ],
+  "words": "src/shared/words.json",
+  "voiceFiles": [ { "file": "audio/voice.wav", "at": 0 } ],
+  "music": [ { "name": "Music bed", "fs": 0, "fe": 450 } ],
+  "musicFiles": [ { "file": "audio/music.wav", "at": 0 } ]
+}

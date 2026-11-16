@@ -1,0 +1,129 @@
+{
+ "later_sentence_openers": {
+  "glue": 275,
+  "point": 121,
+  "cold": 68
+ },
+ "glue_first_words": [
+  [
+   "and",
+   69
+  ],
+  [
+   "but",
+   60
+  ],
+  [
+   "now",
+   23
+  ],
+  [
+   "you see",
+   18
+  ],
+  [
+   "then",
+   16
+  ],
+  [
+   "well",
+   14
+  ],
+  [
+   "so",
+   11
+  ],
+  [
+   "once",
+   11
+  ],
+  [
+   "if",
+   9
+  ],
+  [
+   "as",
+   8
+  ],
+  [
+   "when",
+   7
+  ],
+  [
+   "instead",
+   6
+  ],
+  [
+   "finally",
+   4
+  ],
+  [
+   "next",
+   4
+  ],
+  [
+   "after",
+   2
+  ],
+  [
+   "but what if",
+   2
+  ],
+  [
+   "eventually",
+   2
+  ],
+  [
+   "afterwards",
+   1
+  ],
+  [
+   "at first",
+   1
+  ],
+  [
+   "over time",
+   1
+  ],
+  [
+   "in fact",
+   1
+  ],
+  [
+   "this means",
+   1
+  ],
+  [
+   "meaning",
+   1
+  ],
+  [
+   "because",
+   1
+  ],
+  [
+   "even though",
+   1
+  ],
+  [
+   "in reality",
+   1
+  ]
+ ],
+ "glued_share_median": 1.0,
+ "glued_share_p25": 0.75,
+ "ing_tail_scripts": 53,
+ "ing_tails_total": 77,
+ "you_median": 2.0,
+ "you_zero": 22,
+ "num_median": 0.0,
+ "num_max": 3,
+ "num_zero": 79,
+ "last_sentence_and": 29,
+ "words_p25": 72,
+ "words_p75": 91,
+ "dur_p25": 26.5,
+ "dur_p75": 33.2,
+ "nsent_p25": 4,
+ "nsent_p75": 6
+}

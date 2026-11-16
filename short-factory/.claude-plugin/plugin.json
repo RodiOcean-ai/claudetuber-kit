@@ -1,0 +1,19 @@
+{
+  "name": "short-factory",
+  "version": "0.1.65",
+  "description": "Free Claude Code kit from the RodiOcean channel: study any YouTube channel, then make a faceless 3D Short with a critic panel, Blender, Remotion and a posting plan; plus one skill per explainer animation style.",
+  "author": {
+    "name": "RodiOcean",
+    "url": "https://www.youtube.com/@RodiOcean"
+  },
+  "license": "MIT",
+  "keywords": [
+    "youtube",
+    "shorts",
+    "channel-analysis",
+    "explainer-shorts",
+    "blender",
+    "remotion",
+    "elevenlabs"
+  ]
+}

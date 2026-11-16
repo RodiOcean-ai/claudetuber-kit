@@ -1,0 +1,44 @@
+[
+ {
+  "file": "cm_1_bread.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "two slices of white sandwich bread on a wooden cutting board, top-down-ish, sky-blue tiles, action lines",
+  "notes": "round 2 #1; the model drew a thin comic panel frame, cropped off (34 px each side) and scaled back to 1328"
+ },
+ {
+  "file": "cm_2_knife.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "close-up, a hand plunging a butter knife into an open jar of peanut butter, low angle, burst lines",
+  "notes": "round 2 #4; comic exaggeration: small splashes at the rim (the least splashy of 8 tries); no label, no text"
+ },
+ {
+  "file": "cm_3_spread.png",
+  "w": 1664,
+  "h": 928,
+  "what": "a hand spreading thick peanut butter over a slice of bread with a butter knife, curved motion lines",
+  "notes": "round 1 #3; spread almost to the crust (a thin white crumb rim shows, as the model always left one)"
+ },
+ {
+  "file": "cm_4_press.png",
+  "w": 1328,
+  "h": 1328,
+  "what": "two hands pressing the top slice down onto the sandwich, impact lines, filling bulging out",
+  "notes": "round 1 #4 (the only one of 4 without lettuce); hands checked: fingers OK"
+ },
+ {
+  "file": "cm_5_cut.png",
+  "w": 1664,
+  "h": 928,
+  "what": "a big chef knife slicing down through a peanut-butter sandwich at a dramatic low angle, speed lines",
+  "notes": "round 1 #3; reads as a big slice; the corner-to-corner idea is only implied (8 extra tries from above all cut it straight across or in a cross)"
+ },
+ {
+  "file": "cm_6_triangles.png",
+  "w": 1664,
+  "h": 928,
+  "what": "hero shot: two sandwich halves on a plate, sparkles, orange-yellow sunburst",
+  "notes": "round 1 #1; halves read as a diagonal cut (one clear triangle), filling visible"
+ }
+]

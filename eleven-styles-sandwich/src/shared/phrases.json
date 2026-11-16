@@ -1,0 +1,51 @@
+[
+ {
+  "text": "Take two slices of bread,",
+  "s": 0.6,
+  "e": 2.1,
+  "fs": 18,
+  "fe": 63
+ },
+ {
+  "text": "then dig a knife into the peanut butter,",
+  "s": 2.38,
+  "e": 4.39,
+  "fs": 71,
+  "fe": 132
+ },
+ {
+  "text": "and spread it,",
+  "s": 4.5,
+  "e": 5.18,
+  "fs": 135,
+  "fe": 155
+ },
+ {
+  "text": "right to the edges.",
+  "s": 5.33,
+  "e": 6.3,
+  "fs": 160,
+  "fe": 189
+ },
+ {
+  "text": "Press the second slice on top",
+  "s": 7.08,
+  "e": 8.71,
+  "fs": 212,
+  "fe": 261
+ },
+ {
+  "text": "and cut it corner to corner,",
+  "s": 9.14,
+  "e": 10.43,
+  "fs": 274,
+  "fe": 313
+ },
+ {
+  "text": "because triangles taste better.",
+  "s": 11.02,
+  "e": 12.5,
+  "fs": 331,
+  "fe": 375
+ }
+]

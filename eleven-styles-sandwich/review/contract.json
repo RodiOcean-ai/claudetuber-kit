@@ -1,0 +1,23 @@
+{
+  "_help": "The review page's tabs: one per style. After a change run: python review/make_items.py && python review/make_timeline.py",
+  "title": "Eleven styles, one sandwich",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "manifest": "review/manifest.json",
+  "items": [
+    { "id": "S01-KineticTypography", "mark": "1", "name": "Kinetic typography", "module": "src/styles/s01_kinetic/Kinetic", "export": "Kinetic", "frames": 450 },
+    { "id": "S02-MotionGraphics", "mark": "2", "name": "Motion graphics", "module": "src/styles/s02_motion/MotionGraphics", "export": "MotionGraphics", "frames": 450 },
+    { "id": "S03-Screencast", "mark": "3", "name": "Screencast", "module": "src/styles/s03_screencast/Screencast", "export": "Screencast", "frames": 450 },
+    { "id": "S04-Isometric", "mark": "4", "name": "Isometric", "module": "src/styles/s04_isometric/Isometric", "export": "Isometric", "frames": 450 },
+    { "id": "S05-Whiteboard", "mark": "5", "name": "Whiteboard", "module": "src/styles/s05_whiteboard/Whiteboard", "export": "Whiteboard", "frames": 450 },
+    { "id": "S06-Comic", "mark": "6", "name": "Comic", "module": "src/styles/s06_comic/Comic", "export": "Comic", "frames": 450 },
+    { "id": "S07-TwoPointFiveD", "mark": "7", "name": "2.5D", "module": "src/styles/s07_25d/TwoPointFiveD", "export": "TwoPointFiveD", "frames": 450 },
+    { "id": "S08-Collage", "mark": "8", "name": "Collage", "module": "src/styles/s08_collage/Collage", "export": "Collage", "frames": 450 },
+    { "id": "S09-CharacterStory", "mark": "9", "name": "2D characters with a story", "module": "src/styles/s09_character/CharacterStory", "export": "CharacterStory", "frames": 450 },
+    { "id": "S10-ThreeD", "mark": "10", "name": "3D animation", "module": "src/styles/s10_3d/ThreeD", "export": "ThreeD", "frames": 450 },
+    { "id": "S11-StopMotion", "mark": "11", "name": "Stop motion", "module": "src/styles/s11_stopmotion/StopMotion", "export": "StopMotion", "frames": 450 },
+    { "id": "T05-WhiteboardThreeJS", "mark": "5", "name": "Whiteboard, three.js test", "module": "src/styles/t05_whiteboard3d/Whiteboard3D", "export": "Whiteboard3D", "frames": 450 },
+    { "id": "T06-ComicThreeJS", "mark": "6", "name": "Comic, three.js test", "module": "src/styles/t06_comic3d/Comic3D", "export": "Comic3D", "frames": 450 }
+  ]
+}

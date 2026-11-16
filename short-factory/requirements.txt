@@ -1,0 +1,15 @@
+# Short Factory: Python packages (install into a virtual environment, e.g. .venv in this folder)
+yt-dlp
+openpyxl
+numpy
+pillow
+opencv-python
+matplotlib
+scipy
+librosa
+# Optional, heavy (channel studies, word checks, voice tools):
+# faster-whisper
+# openai-whisper
+# transformers
+# torch
+# The free local voice uses Chatterbox and ClearerVoice, each in its own virtual environment (see config.example.json).
