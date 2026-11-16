@@ -6,16 +6,16 @@ never start a paid generation. `<kit>` below means this folder (the one holding 
 **The place to begin is `/start-claudetube`:** the guided start runs this install as its step 1, then takes the person
 through the other six steps; point anyone new there (typing "install" still works on its own).
 
-1. **Look first.** Check what is already on the PC: Python 3.11+, Node.js 20+, FFmpeg, Blender 4.2+ (only needed for the
+1. **Look first.** Check what is already on the PC: Python 3.12+ (3.13 is what the kit was tested on), Node.js 20+, FFmpeg, Blender 4.2+ (only needed for the
    3D world), Git (optional). Say in one short list what is there and what is missing.
 2. **Tools.** Offer to install what is missing and wait for a yes. On Windows use `winget`, for example
-   `winget install Python.Python.3.12`, `winget install OpenJS.NodeJS.LTS`, `winget install Gyan.FFmpeg`,
+   `winget install Python.Python.3.13`, `winget install OpenJS.NodeJS.LTS`, `winget install Gyan.FFmpeg`,
    `winget install BlenderFoundation.Blender`. On a Mac use Homebrew; on Linux the system package manager.
 3. **Python packages.** Make a virtual environment in `<kit>/short-factory/.venv` and install
    `<kit>/short-factory/requirements.txt` into it. The heavy optional packages at the bottom of that file (speech
    recognition) are only needed for channel studies and voice checks: say so, and install them only if the person agrees.
 4. **Node packages.** Run `npm install` in `<kit>/short-factory/templates/edit` (the Shorts edit) and, if the person wants
-   the sandwich project, in `<kit>/eleven-styles-sandwich` (about 2.4 GB).
+   the sandwich project, `npm ci` in `<kit>/eleven-styles-sandwich` (about 2.4 GB; exact versions from its lock file).
 5. **Folders.** Ask where channel studies and episodes should live; suggest `Documents/short-factory/studies` and
    `Documents/short-factory/episodes`, and create them.
 6. **Settings.** Copy `<kit>/short-factory/config.example.json` to `<kit>/short-factory/config.json` and fill in real full

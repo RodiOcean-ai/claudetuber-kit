@@ -20,8 +20,11 @@ const fmt = (f: number) => {
   const s = f / FPS, m = Math.floor(s / 60);
   return `${m}:${(s - m * 60).toFixed(2).padStart(5, '0')}`;
 };
+// serve.py puts a new random token into the page on every start; every write sends it back (other web pages can't read it)
+const TOKEN = document.querySelector('meta[name="review-token"]')?.getAttribute('content') ?? '';
 const api = async (path: string, body?: unknown) => {
-  const r = await fetch(path, body === undefined ? undefined : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  const r = await fetch(path, body === undefined ? undefined : {
+    method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Review-Token': TOKEN }, body: JSON.stringify(body) });
   if (!r.ok) throw new Error(await r.text());
   return r.json();
 };

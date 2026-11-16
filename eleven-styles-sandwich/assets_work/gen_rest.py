@@ -8,6 +8,8 @@ MP = os.environ.get('MAKE_PICTURE', r'<your-picture-maker>/make-picture.py')   #
 os.chdir(ROOT)
 which = sys.argv[1:] or ['p25', 'collage']
 for name in which:
+    if not re.fullmatch(r'[a-z0-9][a-z0-9_-]{0,63}', name):      # a folder name inside assets_work, nothing else
+        sys.exit(f'refused batch name {name!r}: use a folder name like p25 or collage')
     path = f'assets_work/{name}/gen1.sh'
     var = {}
     t0 = time.time()

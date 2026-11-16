@@ -12,10 +12,11 @@ final_voice_before.wav first.
 Text: the episode's voice_script.txt (sound-spellings like "Kahbee Lahmeh" are kept), mood tags like [calm] dropped, and
 cut right after the locked script's last word, so there are no read-on words to trim (the loop word ends the read).
 Usage: python -I -X utf8 voice_make.py <episode_dir> [--takes 2] [--use N] [--dry]"""
-import argparse, difflib, json, os, re, shutil, subprocess, sys, wave
+import argparse, difflib, json, os, re, shutil, subprocess, sys, tempfile, wave
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sfconfig
+import run_steps
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -44,18 +45,37 @@ def read_text(ep):
     return re.split(r'(?<=[.!?])\s+', text), lock
 
 
-def turn(name, cmd_lines, cpu=False, need=7):
-    cmd = os.path.join(os.environ.get('TEMP', HERE), f'voice_make_{re.sub(r"[^a-z0-9]", "_", name.lower())}.cmd')
-    with open(cmd, 'w', encoding='utf-8') as f:
-        f.write('@echo off\r\n' + f'set "PATH={sfconfig.FFMPEG_DIR};%PATH%"\r\n' + '\r\n'.join(cmd_lines) + '\r\n')
-    if not os.path.isfile(V.get('gpu_turn') or ''):      # no turn-taking script set: run the step directly
-        r = subprocess.run(['cmd', '/c', cmd])
-        if r.returncode:
-            sys.exit(f'{name} failed (exit {r.returncode})')
+def cmd_safe(p):
+    """A path that may appear in the one-line command handed to the turn-taking script: no quote, %, !, ^, &, |, <, >
+    or line break, so that command line cannot be bent into another command."""
+    if re.search(r'["%!^&|<>\r\n]', p):
+        sys.exit(f'refused: this path has a character that is not safe on a command line: {p!r} (move or rename it)')
+    return p
+
+
+def turn(name, steps, cpu=False, need=7):
+    """Run steps (each {'args': [...], 'cwd': optional, 'env': optional}) one after another as argument lists, never
+    through a shell. With a turn-taking script set (config voice_inhouse.gpu_turn) the whole group runs in one turn."""
+    job = {'path': sfconfig.FFMPEG_DIR, 'steps': steps}
+    if not os.path.isfile(V.get('gpu_turn') or ''):      # no turn-taking script set: run the steps directly
+        rc = run_steps.run(job)
+        if rc:
+            sys.exit(f'{name} failed (exit {rc})')
         return
-    args = ['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', V['gpu_turn'], '-Name', name]
+    tag = re.sub(r'[^a-z0-9]', '_', name.lower())[:60]
+    tmp = os.environ.get('TEMP') or tempfile.gettempdir()
+    jp = os.path.join(tmp, f'voice_make_{tag}.json')
+    json.dump(job, open(jp, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    # The turn-taking script runs a command line. It gets one small .cmd whose only line starts the step runner on the
+    # job file; episode paths, names and settings stay in the job file and are never part of a command line.
+    cmd = os.path.join(tmp, f'voice_make_{tag}.cmd')
+    line = f'"{cmd_safe(sys.executable)}" -I "{cmd_safe(os.path.join(HERE, "run_steps.py"))}" "{cmd_safe(jp)}"'
+    with open(cmd, 'w', encoding='utf-8') as f:
+        f.write('@echo off\r\n' + line + '\r\n')
+    label = re.sub(r'[^A-Za-z0-9 _-]', '_', name)[:60]
+    args = ['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', V['gpu_turn'], '-Name', label]
     args += ['-CpuOnly'] if cpu else ['-NeedGB', str(need)]
-    r = subprocess.run(args + ['-Run', cmd])
+    r = subprocess.run(args + ['-Run', cmd_safe(cmd)])
     if r.returncode == 75:
         sys.exit('no turn on the graphics card after 30 minutes: tell the owner, or try again later')
     if r.returncode:
@@ -92,7 +112,8 @@ def main():
     ap.add_argument('--exaggeration', type=float, help='delivery strength (default config)')
     ap.add_argument('--pause', type=float, help='seconds between sentences (default config)')
     a = ap.parse_args()
-    ep = os.path.abspath(a.episode); slug = os.path.basename(ep); out = os.path.join(ep, 'voice', a.name)
+    ep = os.path.abspath(a.episode); slug = os.path.basename(ep)
+    out = sfconfig.inside(os.path.join(ep, 'voice'), sfconfig.safe_name(a.name, 'take folder (--name)'))
     if a.use:
         src = os.path.join(out, f'take{a.use}.wav'); fin = os.path.join(ep, 'voice', 'final_voice.wav')
         if os.path.exists(fin) and not os.path.exists(os.path.join(ep, 'voice', 'final_voice_before.wav')):
@@ -111,25 +132,25 @@ def main():
            'cfg': a.cfg if a.cfg is not None else V['cfg'], 'pause': a.pause if a.pause is not None else V['pause'], 'takes': a.takes, 'swap': a.swap, 'out': out.replace('\\', '/')}
     jp = os.path.join(out, 'job.json'); json.dump(job, open(jp, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     # 1. graphics card: the read (+ the voice swap only with --swap)
-    turn(f'voice {slug}', [f'"{V["chatterbox_python"]}" "{HERE}\\voice_make_gpu.py" "{jp}"'])
+    turn(f'voice {slug}', [{'args': [V['chatterbox_python'], os.path.join(HERE, 'voice_make_gpu.py'), jp]}])
     # 2. processor: the finish
     if a.finish == 'sr':
-        pairs = ' '.join(f'"{out}\\take{k}_raw.wav" "{out}\\take{k}_sr48.wav"' for k in range(1, a.takes + 1))
-        turn(f'voice clean-up {slug}', [f'set "CLEARVOICE_HOME={V["clearvoice_home"]}"', f'cd /d "{V["clearvoice_home"]}"',
-                                        f'"{V["clearvoice_python"]}" "{HERE}\\voice_make_sr.py" {pairs}'], cpu=True)
+        pairs = [p for k in range(1, a.takes + 1) for p in (os.path.join(out, f'take{k}_raw.wav'), os.path.join(out, f'take{k}_sr48.wav'))]
+        turn(f'voice clean-up {slug}', [{'args': [V['clearvoice_python'], os.path.join(HERE, 'voice_make_sr.py')] + pairs,
+                                         'cwd': V['clearvoice_home'], 'env': {'CLEARVOICE_HOME': V['clearvoice_home']}}], cpu=True)
         mid = 'sr48'
     else:                                                          # voice_polish.py: tone matched to the ElevenLabs takes
         pol = V.get('polish') or sys.exit('set voice_inhouse.polish in config.json to your voice-polish script, or use --finish sr')
-        turn(f'voice polish {slug}', [f'"{sfconfig.CFG["python"]}" "{pol}" "{out}\\take{k}_raw.wav" "{out}\\take{k}_polish.wav"'
-                                      for k in range(1, a.takes + 1)], cpu=True)
+        turn(f'voice polish {slug}', [{'args': [sfconfig.CFG['python'], pol, os.path.join(out, f'take{k}_raw.wav'),
+                                                os.path.join(out, f'take{k}_polish.wav')]} for k in range(1, a.takes + 1)], cpu=True)
         mid = 'polish'
     # 3. finish each take
     takes = []
     for k in range(1, a.takes + 1):
         d = finish(os.path.join(out, f'take{k}_{mid}.wav'), os.path.join(out, f'take{k}.wav')); takes.append((k, d))
     # 4. processor: word times + check against the locked script
-    turn(f'voice words {slug}', [f'"{sfconfig.CFG["python"]}" -X utf8 "{HERE}\\voice_make_words.py" '
-                                 + ' '.join(f'"{out}\\take{k}.wav"' for k, _ in takes)], cpu=True)
+    turn(f'voice words {slug}', [{'args': [sfconfig.CFG['python'], '-X', 'utf8', os.path.join(HERE, 'voice_make_words.py')]
+                                          + [os.path.join(out, f'take{k}.wav') for k, _ in takes]}], cpu=True)
     want = [norm(w) for w in ' '.join(sentences).split() if norm(w)]
     for k, d in takes:
         got = [norm(x['w']) for x in json.load(open(os.path.join(out, f'take{k}.words.json'), encoding='utf-8')) if norm(x['w'])]

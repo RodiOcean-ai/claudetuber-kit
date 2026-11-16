@@ -59,7 +59,8 @@ def main():
     ap.add_argument('--per-seed-channels', type=int, default=3); ap.add_argument('--topic', default=TOPIC)
     a = ap.parse_args()
     seeds = [s.strip() for s in open(a.seeds, encoding='utf-8') if s.strip() and not s.strip().startswith('#')]
-    out = os.path.join(sfconfig.CFG['studies_root'], 'niche_' + a.name, dt.date.today().isoformat())
+    name = sfconfig.safe_name(a.name, 'niche map name')
+    out = sfconfig.inside(sfconfig.CFG['studies_root'], 'niche_' + name, dt.date.today().isoformat())
     os.makedirs(os.path.join(out, 'raw'), exist_ok=True)
     print('niche map folder:', out)
 

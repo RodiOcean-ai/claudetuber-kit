@@ -42,7 +42,10 @@ for coll, (repo, branch, prefixes) in REPOS.items():
             continue
         if os.path.splitext(p)[1].lower() not in OK_EXT:
             print('skip (not audio/text):', p); continue
-        dst = os.path.join(OUT, coll, *p.split('/'))
+        parts = p.split('/')
+        dst = os.path.normpath(os.path.join(OUT, coll, *parts))
+        if any(x in ('', '.', '..') or ':' in x or '\\' in x for x in parts) or not dst.startswith(os.path.join(OUT, coll) + os.sep):
+            print('skip (unsafe file name):', p); continue        # a listed name may never land outside its folder
         url = f'https://raw.githubusercontent.com/{repo}/{branch}/' + urllib.parse.quote(p)
         jobs.append((url, dst, t['size']))
 

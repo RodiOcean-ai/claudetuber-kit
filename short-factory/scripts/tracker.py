@@ -118,6 +118,10 @@ def main():
         if name == 'add-sauce':
             p.add_argument('--copy', default='yes')
     a = ap.parse_args()
+    if getattr(a, 'key', None) is not None:                # channel keys and episode slugs name folders: plain names only
+        a.key = sfconfig.safe_name(a.key.strip().lower().lstrip('@'), 'channel key')
+    if getattr(a, 'slug', None) is not None:
+        a.slug = sfconfig.safe_name(a.slug, 'episode slug')
     wb = book()
     if a.cmd == 'init':
         save(wb); print('tracker ready:', sfconfig.TRACKER)
@@ -129,7 +133,7 @@ def main():
         save(wb); print('channel saved', a.key)
     elif a.cmd == 'add-episode':
         upsert(wb['Episodes'], ['slug'], {'slug': a.slug, 'title': a.title, 'subject channel': a.subject, 'music': a.music, 'status': a.status,
-                                          'folder': os.path.join(sfconfig.CFG['episodes_root'], a.slug), 'created': today(), 'notes': a.notes})
+                                          'folder': sfconfig.inside(sfconfig.CFG['episodes_root'], a.slug), 'created': today(), 'notes': a.notes})
         save(wb); print('episode saved', a.slug)
     elif a.cmd == 'set-status':
         upsert(wb['Episodes'], ['slug'], {'slug': a.slug, 'status': a.status}); save(wb); print(a.slug, '->', a.status)

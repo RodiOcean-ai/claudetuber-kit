@@ -35,5 +35,8 @@ The `review-page` skill tells Claude how to set it up. In short: copy the `revie
 | `review/ReviewApp.tsx`, `Timeline.tsx`, `index.html` | the page (bundled with the project's own esbuild) |
 | written while in use | `notes.json` (notes and approvals), `builds.json` (each tab's build), `sounds.json`, `review.js` |
 
+**Keep it on this PC: never expose or tunnel the page** (no port forwarding, ngrok, Cloudflare Tunnel or similar). It
+only takes notes and approvals from the page itself (its own address plus a random token made at every start).
+
 Needs: the project's `npm install` done (Remotion brings esbuild and the Player; add `@remotion/player` at the same version
 as `remotion` if it is missing), Python 3.9 or newer. FFmpeg and numpy are used when present, not required.

@@ -114,7 +114,7 @@ The owner dropped the ElevenLabs takes for a free local voice after five blind l
 
 ### 8. Post and learn (skill **sf-posting**)
 - `post_kit.py`, cover pick (A/B), `calendar_plan.py next <slug>`: one post a day, **16:00-22:00 local time** (he has been choosing 21:00).
-- **Schedule through Metricool** (sf-posting Step 4): `metricool_prep.py`, then one-time Dropbox links, then one Metricool post for YouTube Shorts, Instagram Reels, TikTok and Facebook Reels, then check Metricool stored the full video and cover. **Only after the owner's explicit OK for that post** ("post it at 21:00"). No subtitles (owner: "Skip subtitles").
+- **Schedule through Metricool** (sf-posting Step 4): `metricool_prep.py`, then one-time Dropbox links, then one Metricool post for YouTube Shorts, Instagram Reels, TikTok and Facebook Reels, then check Metricool stored the full video and cover. **Only after the owner's explicit OK for that post** ("post it at 21:00"); only then `--publish public` for that one post (without it nothing goes out publicly by itself). No subtitles (owner: "Skip subtitles").
 - `tracker.py log-post` once it has gone out; `/log-stats` at **24 h** and **7 days** (Metricool's analytics first).
 - **After about 10 Shorts**, write **our viral recipe list** in `reference/OUR_VIRAL_RECIPE.md` from the top performers (what they share: hook type, length, music, thumbnail, topic), add the headline rules to `lessons.md`, and redo it whenever views drop.
 

@@ -13,7 +13,13 @@ Then Claude, in the chat, ONLY after the owner's explicit OK for this post ("pos
   5. tracker / JOURNEY: scheduled via Metricool, with the post's uuid.
 
 Usage: python -I -X utf8 metricool_prep.py <episode_dir> --date YYYY-MM-DD --time HH:MM [--cover A|B|<file>] [--video <file>]
-Reads the title and the description from post/POST.md (post_kit.py), the Metricool brand from config.json "metricool"."""
+                                          [--publish private|unlisted|public] [--dry]
+Reads the title and the description from post/POST.md (post_kit.py), the Metricool brand from config.json "metricool".
+
+Safe by default: the post is written with autoPublish OFF, YouTube privacy "private" and TikTok "only me", so nothing
+goes out to the public by itself. --publish unlisted makes the YouTube copy unlisted (still no autoPublish).
+Only --publish public (autoPublish on, YouTube public, TikTok everyone) makes it go out publicly at the slot: use it for
+one post at a time, and only after the person's explicit OK for that post. The script prints what will happen."""
 import argparse, datetime as dt, json, os, re, shutil, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -43,6 +49,9 @@ def main():
     ap.add_argument('episode'); ap.add_argument('--date', required=True); ap.add_argument('--time', required=True)
     ap.add_argument('--cover', default='A'); ap.add_argument('--video')
     ap.add_argument('--dry', action='store_true', help='check and print only: no copy into Dropbox, nothing written')
+    ap.add_argument('--publish', choices=['private', 'unlisted', 'public'], default='private',
+                    help='private (default) or unlisted: Metricool does not publish it by itself; public: it goes out '
+                         'publicly at the slot (only with the OK of the person for this one post)')
     a = ap.parse_args()
     mc = sfconfig.CFG.get('metricool') or sys.exit('config.json has no "metricool" section')
     ep = os.path.abspath(a.episode); slug = os.path.basename(ep.rstrip('/\\')); post = os.path.join(ep, 'post')
@@ -67,31 +76,32 @@ def main():
 
     # copy into the Dropbox folder on this PC
     sub = f'{a.date} {slug}'
-    local = os.path.join(dropbox_root(), mc['dropbox_folder'], sub)
+    local = sfconfig.inside(dropbox_root(), mc['dropbox_folder'], sub)      # never outside the Dropbox folder
     vname, cname = f'{slug}_video.mp4', f'{slug}_cover.jpg'
     if not a.dry:
         os.makedirs(local, exist_ok=True)
         shutil.copyfile(video, os.path.join(local, vname)); shutil.copyfile(cover, os.path.join(local, cname))
     dpaths = [f'/{mc["dropbox_folder"]}/{sub}/{vname}', f'/{mc["dropbox_folder"]}/{sub}/{cname}']
 
+    public = a.publish == 'public'
     info = {
-        'autoPublish': True, 'descendants': [], 'draft': False, 'firstCommentText': '', 'hasNotReadNotes': False,
+        'autoPublish': public, 'descendants': [], 'draft': False, 'firstCommentText': '', 'hasNotReadNotes': False,
         'media': [PLACEHOLDER_VIDEO], 'videoThumbnailUrl': PLACEHOLDER_COVER, 'mediaAltText': [],
         'providers': [{'network': n} for n in mc['networks']],
         'publicationDate': {'dateTime': when.strftime('%Y-%m-%dT%H:%M:%S'), 'timezone': mc['timezone']},
         'shortener': False, 'smartLinkData': {'ids': []},
         'text': f'{title}\n\n{desc}',
-        'youtubeData': {'title': title, 'type': 'short', 'privacy': 'public', 'tags': [], 'madeForKids': False,
+        'youtubeData': {'title': title, 'type': 'short', 'privacy': a.publish, 'tags': [], 'madeForKids': False,
                         'isAiGeneratedContent': True},
         'instagramData': {'type': 'REEL', 'showReelOnFeed': True, 'isAiGenerated': True},
         'tiktokData': {'disableComment': False, 'disableDuet': False, 'disableStitch': False,
-                       'privacyOption': 'PUBLIC_TO_EVERYONE', 'commercialContentThirdParty': False,
+                       'privacyOption': 'PUBLIC_TO_EVERYONE' if public else 'SELF_ONLY', 'commercialContentThirdParty': False,
                        'commercialContentOwnBrand': False, 'title': title, 'autoAddMusic': False, 'isAigc': True},
         'facebookData': {'type': 'REEL', 'title': title}}
     for n in ('youtube', 'instagram', 'tiktok', 'facebook'):        # only the networks this brand posts to
         if n not in mc['networks']:
             info.pop(f'{n}Data', None)
-    out = {'blogId': mc['blog_id'], 'date': when.strftime('%Y-%m-%dT%H:%M:%S') + off, 'info': info,
+    out = {'blogId': mc['blog_id'], 'date': when.strftime('%Y-%m-%dT%H:%M:%S') + off, 'info': info, 'publish': a.publish,
            'dropbox_paths': dpaths, 'sizes': [os.path.getsize(video), os.path.getsize(cover)]}
     p = os.path.join(post, 'metricool_post.json')
     if a.dry:
@@ -100,6 +110,12 @@ def main():
         json.dump(out, open(p, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     print(f'slot: {when:%A %d %B %Y, %H:%M} ({mc["timezone"]}, UTC{off}) on {", ".join(mc["networks"])}')
     print(f'title: {title}')
+    if public:
+        print(f'WILL HAPPEN: at the slot Metricool publishes this PUBLICLY on {", ".join(mc["networks"])} by itself '
+              f'(autoPublish on, YouTube public, TikTok everyone). Only with the OK of the person for this post.')
+    else:
+        print(f'WILL HAPPEN: nothing goes out publicly by itself: autoPublish off, YouTube {a.publish}, TikTok only me. '
+              f'To publish it publicly at the slot, run again with --publish public (only with the OK of the person for this post).')
     print(f'dropbox: {dpaths[0]} ({out["sizes"][0]} bytes)\n         {dpaths[1]} ({out["sizes"][1]} bytes)')
     print(f'wrote {p}  (placeholders {PLACEHOLDER_VIDEO} and {PLACEHOLDER_COVER})')
 

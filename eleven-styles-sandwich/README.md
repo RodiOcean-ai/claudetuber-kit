@@ -21,7 +21,7 @@ styles. This is the test project behind the `explainer-*` skills in the Short Fa
 | T06-ComicThreeJS | Comic, live 3D panels | no |
 
 ## Run it
-1. Install Node.js 20 or newer, then in this folder run `npm install` (about 2.4 GB of packages).
+1. Install Node.js 20 or newer, then in this folder run `npm ci` (about 2.4 GB of packages; it installs the exact versions in `package-lock.json`).
 2. Add your own `public/audio/voice.wav` and `public/audio/music.wav`, and the sound effects listed in `public/sfx/README.md`.
 3. `npx remotion studio` opens every style in the browser.
 4. The review page (every style live, one tab each; click a spot or press N for a note, C for a comment on the whole

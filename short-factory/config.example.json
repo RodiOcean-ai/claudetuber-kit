@@ -39,7 +39,7 @@
   },
   "tracker": "data/tracker.xlsx",
   "metricool": {
-    "note": "Optional: scheduling through Metricool. Media goes in by one-time Dropbox links; you OK every post.",
+    "note": "Optional: scheduling through Metricool. Media goes in by one-time Dropbox links; you OK every post. Safe by default: metricool_prep.py writes autoPublish off and YouTube private unless you pass --publish public for that one post.",
     "blog_id": "<your Metricool blog id>",
     "brand": "<your Metricool brand name>",
     "timezone": "<your timezone, e.g. Europe/London>",

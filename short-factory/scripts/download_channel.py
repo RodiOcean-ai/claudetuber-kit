@@ -30,13 +30,15 @@ def main():
     base = ch if ch.startswith('http') else f'https://www.youtube.com/{ch if ch.startswith("@") else "@" + ch}'
     base = re.sub(r'/(shorts|videos|featured)/?$', '', base)
     key = (a.key or re.sub(r'[^a-z0-9-]', '', base.rsplit('/', 1)[-1].lower().lstrip('@'))) or 'channel'
+    key = sfconfig.safe_name(key.strip().lower().lstrip('@'), 'channel key (--key)')
     study = sfconfig.study_dir(key); os.makedirs(os.path.join(study, 'videos'), exist_ok=True)
     print('study folder:', study)
     sh, lo = flat(base + '/shorts'), flat(base + '/videos')
     json.dump(sh, open(os.path.join(study, 'shorts.json'), 'w', encoding='utf-8'))
     json.dump(lo, open(os.path.join(study, 'videos.json'), 'w', encoding='utf-8'))
-    S = [e for e in sh.get('entries', []) if e and e.get('view_count') is not None]
-    L = [e for e in lo.get('entries', []) if e and e.get('view_count') is not None]
+    ok = lambda e: e and e.get('view_count') is not None and sfconfig.VIDEO_ID.match(str(e.get('id', '')))  # ids become file names
+    S = [e for e in sh.get('entries', []) if ok(e)]
+    L = [e for e in lo.get('entries', []) if ok(e)]
     print(f'found {len(S)} Shorts and {len(L)} long videos')
     done = tracker.analysed_ids(key)
     top = []

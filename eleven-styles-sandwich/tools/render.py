@@ -5,7 +5,7 @@ Usage: py -3.13 tools/render.py S01 [S02 ...] [--force]
 - renders with the Remotion CLI (graphics card on for the 3D styles), then masters the sound to -12 LUFS / -1 dB true peak
   (house rule) without touching the picture, and writes out/<id>.mp4 plus out/<id>.render.json (seconds taken, sizes);
 - appends one line per render to log/LOG.md."""
-import json, os, subprocess, sys, time
+import json, os, shutil, subprocess, sys, time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IDS = ['S01-KineticTypography', 'S02-MotionGraphics', 'S03-Screencast', 'S04-Isometric', 'S05-Whiteboard', 'S06-Comic',
@@ -18,6 +18,14 @@ def sid(s):
     if len(m) != 1:
         sys.exit(f'unknown style {s}')
     return m[0]
+
+
+def remotion():
+    """Node plus the project's own Remotion command-line file: run as an argument list, with no shell in between."""
+    node, cli = shutil.which('node'), os.path.join(ROOT, 'node_modules', '@remotion', 'cli', 'remotion-cli.js')
+    if not node or not os.path.isfile(cli):
+        sys.exit('Remotion was not found: install Node.js, then run "npm ci" (or "npm install") in the project folder')
+    return [node, cli]
 
 
 def approved(style):
@@ -45,9 +53,9 @@ def main():
             print(f'SKIP {style}: {label} is not approved on the review page'); continue
         raw = os.path.join(ROOT, 'out', f'{style}.raw.mp4'); final = os.path.join(ROOT, 'out', f'{style}.mp4')
         t = time.time()
-        cmd = ['npx', 'remotion', 'render', 'src/index.ts', style, raw, '--gl=angle', '--concurrency=6', '--codec=h264', '--crf=16',
+        cmd = remotion() + ['render', 'src/index.ts', style, raw, '--gl=angle', '--concurrency=6', '--codec=h264', '--crf=16',
                '--audio-codec=aac', '--audio-bitrate=320k', '--log=error']
-        r = subprocess.run(cmd, cwd=ROOT, shell=(os.name == 'nt'))
+        r = subprocess.run(cmd, cwd=ROOT)
         if r.returncode:
             sys.exit(f'render failed for {style}')
         took = time.time() - t

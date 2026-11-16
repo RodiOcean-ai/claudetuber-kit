@@ -14,8 +14,11 @@ Files in review/: notes.json (notes + approvals), builds.json (label, changes, p
 bundle, rebuilt whenever src/ or the page's .tsx files change), timeline.json (make_timeline.py),
 sounds.json (sound effects and clips per tab, read by the page from the compositions).
 A note: frame null = a comment on the whole tab (key C); track = a note on one timeline track, item = what is there.
-The server listens on 127.0.0.1 only (this PC), never on the network."""
-import json, mimetypes, os, shutil, socket, subprocess, sys, threading, time, uuid
+The server listens on 127.0.0.1 only (this PC), never on the network. Writes (notes, approvals, sounds) are taken only
+from the page itself: the request must come from this page's own address (Origin or Referer) and carry the random token
+the server puts into the page on every start, so another website open in the same browser cannot write notes or approve
+a build. Claude's commands below edit the files directly and need no token. Never expose or tunnel this page."""
+import hmac, json, mimetypes, os, secrets, shutil, socket, subprocess, sys, threading, time, uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote, urlparse
 
@@ -37,6 +40,8 @@ FILE_LOADERS = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'avif', 'svg', 'bmp', 'woff
 LOCK = threading.Lock()
 EMPTY = {'notes': [], 'approvals': []}
 TRACKS = {'picture', 'clips', 'voice', 'music', 'sfx'}
+TOKEN = secrets.token_urlsafe(32)          # new on every start; only the page served from here knows it
+MAX_BODY = 5_000_000                       # bytes; a note or a sounds list is far smaller
 
 
 def item_ids():
@@ -143,10 +148,39 @@ class H(BaseHTTPRequestHandler):
         self.send_header('Content-Length', str(len(b))); self.send_header('Cache-Control', 'no-store'); self.end_headers()
         self.wfile.write(b)
 
-    def _text(self, txt, code=200, ctype='text/plain; charset=utf-8'):
+    def _text(self, txt, code=200, ctype='text/plain; charset=utf-8', extra=()):
         b = txt.encode('utf-8')
         self.send_response(code); self.send_header('Content-Type', ctype); self.send_header('Content-Length', str(len(b)))
-        self.send_header('Cache-Control', 'no-store'); self.end_headers(); self.wfile.write(b)
+        self.send_header('Cache-Control', 'no-store')
+        for k, v in extra:
+            self.send_header(k, v)
+        self.end_headers(); self.wfile.write(b)
+
+    def _own(self):
+        port = self.server.server_address[1]
+        return (f'http://127.0.0.1:{port}', f'http://localhost:{port}')
+
+    def _host_ok(self):
+        """asked for by this PC's own address (stops a website that points its own name at 127.0.0.1)"""
+        return self.headers.get('Host', '') in [o[len('http://'):] for o in self._own()]
+
+    def _write_ok(self):
+        """a write comes from this page: its own Origin (or, without one, its own Referer) and this run's token"""
+        own, origin = self._own(), self.headers.get('Origin')
+        if origin is not None:
+            from_page = origin in own
+        else:
+            ref = self.headers.get('Referer') or ''
+            from_page = any(ref == o or ref.startswith(o + '/') for o in own)
+        sent = self.headers.get('X-Review-Token', '').encode('utf-8', 'replace')
+        return from_page and hmac.compare_digest(sent, TOKEN.encode('ascii'))
+
+    def _page(self):
+        """index.html with this run's token in it (the page reads it and sends it back on every write)"""
+        html = open(os.path.join(RV, 'index.html'), encoding='utf-8').read()
+        html = html.replace('<head>', f'<head>\n<meta name="review-token" content="{TOKEN}">', 1)
+        return self._text(html, ctype='text/html; charset=utf-8',
+                          extra=[('X-Frame-Options', 'DENY'), ('Content-Security-Policy', "frame-ancestors 'none'")])
 
     def _file(self, path):
         size = os.path.getsize(path)
@@ -187,12 +221,14 @@ class H(BaseHTTPRequestHandler):
         return full if full.startswith(os.path.normpath(base) + os.sep) and os.path.isfile(full) else None
 
     def do_GET(self):
+        if not self._host_ok():
+            return self._text('refused: open the page at http://127.0.0.1:<port>', 403)
         path = unquote(urlparse(self.path).path)
         if path in ('/', '/index.html'):
             err = bundle()
             if err:
                 return self._text('The review page could not be built:\n\n' + err, 500)
-            return self._file(os.path.join(RV, 'index.html'))
+            return self._page()
         if path == '/review.js':
             bundle()
             return self._file(os.path.join(RV, 'review.js'))
@@ -219,8 +255,13 @@ class H(BaseHTTPRequestHandler):
         return self._file(full)
 
     def do_POST(self):
+        if not (self._host_ok() and self._write_ok()):
+            print('REFUSED a write that did not come from the review page itself', flush=True)
+            return self._text('refused: writes are only taken from the review page itself (reload the page)', 403)
         path = urlparse(self.path).path
         n = int(self.headers.get('Content-Length') or 0)
+        if n > MAX_BODY:
+            return self._text('too big', 413)
         try:
             body = json.loads(self.rfile.read(n) or b'{}')
         except ValueError:

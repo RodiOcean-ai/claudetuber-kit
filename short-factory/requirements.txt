@@ -1,15 +1,17 @@
 # Short Factory: Python packages (install into a virtual environment, e.g. .venv in this folder)
-yt-dlp
-openpyxl
-numpy
-pillow
-opencv-python
-matplotlib
-scipy
-librosa
+# Exact versions that are known to work together (Python 3.13 on Windows; Python 3.12 or newer is needed).
+# yt-dlp is the one to update when YouTube downloads stop working: pip install -U yt-dlp
+yt-dlp==2026.10.26
+openpyxl==3.1.5
+numpy==2.5.4
+pillow==13.0.0
+opencv-python==5.0.0.93
+matplotlib==3.11.2
+scipy==1.18.1
+librosa==1.0.0
 # Optional, heavy (channel studies, word checks, voice tools):
-# faster-whisper
-# openai-whisper
-# transformers
-# torch
+# faster-whisper==1.2.1
+# openai-whisper==20250625
+# transformers==5.21.0
+# torch==2.14.1        (pick the build for your graphics card on pytorch.org)
 # The free local voice uses Chatterbox and ClearerVoice, each in its own virtual environment (see config.example.json).

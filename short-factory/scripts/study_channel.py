@@ -108,13 +108,17 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument('key'); ap.add_argument('--skip-sounds', action='store_true')
     ap.add_argument('--keep-media', action='store_true'); ap.add_argument('--only', nargs='*')
     a = ap.parse_args()
+    a.key = sfconfig.safe_name(a.key.strip().lower().lstrip('@'), 'channel key')
     study = sfconfig.study_dir(a.key)
     picks = json.load(open(os.path.join(study, 'picks.json'), encoding='utf-8'))
     done = tracker.analysed_ids(a.key)
     py = sys.executable
     wb = tracker.book(); recs = []
     for p in picks['top']:
-        vid = p['id']; adir = os.path.join(study, 'analysis', vid); mp4 = os.path.join(study, 'videos', vid + '.mp4')
+        vid = str(p['id'])
+        if not sfconfig.VIDEO_ID.match(vid):                # ids become folder and file names
+            print('skipped (not a video id):', repr(vid)); continue
+        adir = os.path.join(study, 'analysis', vid); mp4 = os.path.join(study, 'videos', vid + '.mp4')
         if a.only and vid not in a.only:
             continue
         if vid in done and os.path.exists(os.path.join(adir, 'metrics.json')):
