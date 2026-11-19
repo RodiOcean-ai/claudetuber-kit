@@ -32,6 +32,15 @@ Free under the MIT licence.
   **"set up the review page"**.
 
 ## Install
+**Shortest way:** paste this into Claude Code:
+
+`Install https://github.com/RodiOcean-ai/claudetuber-kit`
+
+Claude asks where to put the kit (it suggests your Documents folder), downloads it and sets it up. When it's done, open
+that folder in Claude Code and type **/start-claudetube**. (For Claude: follow "Installing from the link" at the top of
+`INSTALL.md`.)
+
+**Or by hand:**
 1. Download this folder (green **Code** button, then **Download ZIP**) and unzip it.
 2. Open the folder in **Claude Code**.
 3. Type **install**.

@@ -77,7 +77,9 @@ else, store that place in `brand_sheet`) and `first-video/` (idea, titles, thumb
 - They are already in Claude Code: say so and tick it off. One line on plans: Claude Code needs a paid Claude plan;
   Pro is enough to start, Max gives more room for long video sessions. One line on the app: the Claude desktop app's
   Code tab, with this folder open, is the easiest place to work, and its browser pane shows the review page beside the chat.
-- Run the **install** skill (`<kit>/INSTALL.md`). First the look: Python, Node.js, FFmpeg, Blender (only for the 3D
+- Already installed (for example with the one-line install from the kit's link)? If `<kit>/short-factory/config.json`
+  exists and the short-factory plugin is listed, say so in one line, check nothing is missing, and tick this part off.
+- Otherwise run the **install** skill (`<kit>/INSTALL.md`). First the look: Python, Node.js, FFmpeg, Blender (only for the 3D
   world), Git (optional); show one short list of what is there and what is missing. Then each install on its own,
   asking first with name, source and size. Ask separately about the big optional parts: the sandwich project's
   packages (about 2.4 GB, needed for step 2) and the speech-recognition packages (for studying a channel).

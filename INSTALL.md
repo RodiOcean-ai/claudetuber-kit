@@ -6,6 +6,17 @@ never start a paid generation. `<kit>` below means this folder (the one holding 
 **The place to begin is `/start-claudetube`:** the guided start runs this install as its step 1, then takes the person
 through the other six steps; point anyone new there (typing "install" still works on its own).
 
+**Installing from the link.** If the person pasted `Install https://github.com/RodiOcean-ai/claudetuber-kit` (or only
+the link) and you are not inside the kit's folder yet (no `INSTALL.md` next to you):
+- a. Ask where to put the kit; suggest `Documents/claudetuber-kit` (about 25 MB). After a yes, download it there with
+  `git clone https://github.com/RodiOcean-ai/claudetuber-kit.git "<that folder>"`, or, without Git, download
+  `https://github.com/RodiOcean-ai/claudetuber-kit/archive/refs/heads/main.zip` and unzip it there. If the folder
+  already exists, don't overwrite it: ask whether to update it (`git pull` inside it) or pick another folder.
+- b. From then on `<kit>` is that folder. Carry on with step 1 below.
+- c. At the end, tell them that the guided start and the kit's own rules only switch on inside that folder: open it in
+  Claude Code (in the desktop app, choose that folder; in a terminal, `cd` into it and run `claude`) and type
+  `/start-claudetube`.
+
 1. **Look first.** Check what is already on the PC: Python 3.12+ (3.13 is what the kit was tested on), Node.js 20+, FFmpeg, Blender 4.2+ (only needed for the
    3D world), Git (optional). Say in one short list what is there and what is missing.
 2. **Tools.** Offer to install what is missing and wait for a yes. On Windows use `winget`, for example
@@ -39,6 +50,7 @@ through the other six steps; point anyone new there (typing "install" still work
 10. **Done.** Tell them what to try first: "make a 15-second explainer in whiteboard style", `/study-channel @somechannel`,
     `/make-short`, "set up the review page" (in any Remotion project), or "open the sandwich project"
     (`npx remotion studio` in `<kit>/eleven-styles-sandwich`).
+    For the guided start through all 7 steps: open `<kit>` in Claude Code and type `/start-claudetube`.
 
 Words used in the skills: `${CLAUDE_PLUGIN_ROOT}` is the plugin folder (`short-factory`); `<python>`, `<studies_root>`
 and `<episodes_root>` are the values in `config.json`; `<projects>` is the folder that holds the studies and episodes
